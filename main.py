@@ -23,7 +23,7 @@ st.title("Document Query App")
 st.write("This app allows you to query documents for specific information.")
 DATA_URL="https://atcold.github.io/NYU-DLSP20/en/week12/12-3/"
 
-llm = Gemini(model_name="models/gemini-1.0-pro",api_key=os.environ["GOOGLE_API_KEY"], max_tokens=1500)
+llm = Gemini(model_name="models/gemini-1.0-pro",api_key=os.environ["GOOGLE_API_KEY"], max_tokens=2500)
 
 embed_model=GeminiEmbedding(model_name="models/embedding-001")
 
