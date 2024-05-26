@@ -63,6 +63,6 @@ query_engine=RetrieverQueryEngine(retriever=retriever)
 #print(response)
 user_query = st.text_input("Enter your query:")
 if user_query:
-    response = query_engine.query(user_query)
+    response = query_engine.query(user_query,max_tokens=1500)
     st.write("Response:")
     st.write(response)
