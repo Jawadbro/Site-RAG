@@ -55,7 +55,7 @@ pipeline=IngestionPipeline(
     ],
     vector_store=vector_store
 )
-#pipeline.run(documents=documents)
+pipeline.run(documents=documents)
 index=VectorStoreIndex.from_vector_store(vector_store=vector_store)
 retriever=VectorIndexRetriever(index=index,similarity_top_k=60)
 query_engine=RetrieverQueryEngine(retriever=retriever)
