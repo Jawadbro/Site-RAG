@@ -23,7 +23,7 @@ st.title("Document Query App")
 st.write("This app allows you to query documents for specific information.")
 DATA_URL="https://atcold.github.io/NYU-DLSP20/en/week12/12-3/"
 
-llm = Gemini(model_name="models/gemini-1.0-pro",api_key=os.environ["GOOGLE_API_KEY"], max_tokens=2500)
+llm = Gemini(model_name="models/gemini-1.0-pro",api_key=os.environ["GOOGLE_API_KEY"], max_tokens=3900)
 
 embed_model=GeminiEmbedding(model_name="models/embedding-001")
 
@@ -50,7 +50,7 @@ pinecone_index=pinecone_client.Index("demo")
 vector_store=PineconeVectorStore(pinecone_index=pinecone_index)
 pipeline=IngestionPipeline(
     transformations=[
-        SentenceSplitter(chunk_size=1024,chunk_overlap=20),
+        SentenceSplitter(chunk_size=1024,chunk_overlap=200),
         embed_model
     ],
     vector_store=vector_store
